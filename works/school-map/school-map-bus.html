@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+	<title>成大校园公交路线</title>
+	<meta name="keywords" content="botany, services, responsive, bootstrap, free template, templatemo" />
+	<meta name="description" content="Botany Template, Services, free template, responsive bootstrap" />
+	<link href="../../css/font-awesome.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../css/templatemo_style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/basic.css" rel="stylesheet" type="text/css">
+
+	<!-- HTML 5 shim for IE backwards compatibility -->
+		<!-- [if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+		</script>
+		<![endif]-->
+	<!-- 
+	Credits
+	Equal Height Columns - http://www.hongkiat.com/blog/css-equal-height/
+	Font Awesome by Dave Gandy - http://fontawesome.io
+-->
+      <!-- Favicon -->
+  <link rel="shortcut icon" href="../../images/favicon/favicon.png">
+  
+</head>
+<body class="templatemo_flower_3">
+	<div id="main_container">
+		<div class="container" id="services">
+			<div class="row col-wrap">			 
+				<div id="left_container" class="col col-md-3 col-sm-12">
+					<div class="templatemo_logo">
+						<a  href="../index.html"><img src="../../images/templatemo_logo.png" alt="Botany Theme"></a>
+					</div>
+					<nav id="main_nav">
+						<ul class="nav">
+							<li><a href="../../index.html">Home</a></li>
+							<li><a href="../../html/about.html">About</a></li>
+							<li><a href="../../html/photo.html">Photo</a></li>
+                            <li class="active"><a href="../../html/works.html">My Works</a></li>
+							<li><a href="../../html/university.html">University</a></li>
+                            <li><a href="../../html/hometown.html">HomeTown</a></li>
+							<li><a href="../../html/contact.html">Contact</a></li>
+						</ul>
+					</nav> <!-- nav -->	
+
+					<form  action="#" method="get" class="navbar-form" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search" id="keyword" name="keyword">
+						</div>
+						<button type="submit" class="btn btn-primary" name="Search">Go</button>
+					</form>
+					<div>
+						<a  href="#"><img src="../../images/facebook.png" alt="Like us on Facebook"></a>
+						<a href="#"><img src="../../images/twitter.png" alt="Follow us on Twitter"></a>
+						<a href="#"><img src="../../images/rss.png" alt="RSS feeds"></a>
+					</div>
+                    <div class="sentence">
+                    <p>创作——源于生活</p>
+                    </div>
+				</div>			  	
+				<div id="right_container" class="col col-md-9 col-sm-12">
+					<div class="row">
+                    	<div class="col col-md-12">
+                        	<h2>成都大学动态校园地图 <a href="../../index.html" target="_blank"><span  style="font-size:70%;">（成都大学新生指南群 286016921  群主倾情奉献！）</span></a></h2>
+                        </div>
+                    </div>
+					<article class="row">
+                    	<div class="col col-md-12 school-map">
+                        <h4>请选择线路：</h4>
+                        <h4>线路一：<a href="school-map-qianmen.html">前校门——体育馆（场）、后校门、新空间广场</a></h4>
+                        <h4>线路二：<a href="school-map-baodao.html">体育馆（场）——第1—10栋宿舍、新空间广场、第一食堂、学校后校门</a></h4>
+                        <h4>线路三：<a href="school-map-baodaotwo.html">体育馆（场）——第11—14栋宿舍、第四食堂、第五食堂美食城、第八、九、十教学楼</a></h4>
+                        <h4>校内公交路线：<a href="school-map-bus.html">后校门——第11—14栋宿舍、第四食堂、第五食堂美食城、第八、九、十教学楼等</a></h4>
+                        </div><br>
+                        <h3 class="col col-md-12 school-map">校内公交路线</h3>
+						<div class="col col-md-12"><h4>起点：成都大学体育馆（体育场）</h4></div>
+                        <div class="col col-md-12"><h4>终点：第1—10栋宿舍、新空间广场、第一食堂、学校后校门</h4></div>
+                        <!--第一个地图开始-->				
+						<div class="mapthree">
+
+                            <!--引用百度地图API-->
+                            <style type="text/css">
+                                html,body{margin:0;padding:0;}
+                                .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+                                .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+                            </style>
+                            <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+                            
+                            
+                            
+                              <!--百度地图容器-->
+                              <div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+                            
+                            <script type="text/javascript">
+                                //创建和初始化地图函数：
+                                function initMap(){
+                                    createMap();//创建地图
+                                    setMapEvent();//设置地图事件
+                                    addMapControl();//向地图添加控件
+                                    addMarker();//向地图中添加marker
+                                    addPolyline();//向地图中添加线
+                                    addRemark();//向地图中添加文字标注
+                                }
+                                
+                                //创建地图函数：
+                                function createMap(){
+                                    var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+                                    var point = new BMap.Point(104.194103,30.655419);//定义一个中心点坐标
+                                    map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+                                    window.map = map;//将map变量存储在全局
+                                }
+                                
+                                //地图事件设置函数：
+                                function setMapEvent(){
+                                    map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+                                    map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+                                    map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+                                    map.enableKeyboard();//启用键盘上下左右键移动地图
+                                }
+                                
+                                //地图控件添加函数：
+                                function addMapControl(){
+                                    //向地图中添加缩放控件
+                                var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+                                map.addControl(ctrl_nav);
+                                    //向地图中添加缩略图控件
+                                var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+                                map.addControl(ctrl_ove);
+                                    }
+                                
+                                //标注点数组
+                                var markerArr = [{title:"后校门（校内公交起点）",content:"校内公交1元一次，招手即停。<br/>这里有奶茶店一排；小吃几条街；KTV一条街；火锅一条街；还有商场，公交站等。",point:"104.191695|30.655753",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+                                     ,{title:"前校门（点击查看公交）",content:"出校门有公交站台：<br/>右转是市区方向，左转是洛带方向。<br/>97路、80路、219路、858A路、858路、869路、887路、890路、891路。",point:"104.193492|30.653811",isOpen:0,icon:{w:21,h:21,l:0,t:46,x:1,lb:10}}
+                                     ,{title:"成大第14栋宿舍",content:"女生寝室【4人间】<br/>标准化学生公寓",point:"104.197368|30.661842",isOpen:0,icon:{w:21,h:21,l:0,t:46,x:1,lb:10}}
+                                     ,{title:"成大第13栋宿舍",content:"男生寝室【4人间】<br/>标准化学生公寓",point:"104.19735|30.661143",isOpen:0,icon:{w:21,h:21,l:0,t:46,x:1,lb:10}}
+                                     ,{title:"第12栋宿舍（鸳鸯楼）",content:"鸳鸯楼【4人间】<br/>标准化学生公寓",point:"104.197548|30.66035",isOpen:0,icon:{w:21,h:21,l:0,t:46,x:1,lb:10}}
+                                     ,{title:"成大第11栋宿舍",content:"女生寝室【4人间】<br/>标准化学生公寓",point:"104.197988|30.659535",isOpen:0,icon:{w:21,h:21,l:0,t:46,x:1,lb:10}}
+                                     ,{title:"成都大学体育场",content:"学校足球场",point:"104.200036|30.656211",isOpen:0,icon:{w:23,h:25,l:0,t:21,x:9,lb:12}}
+                                     ,{title:"成都大学篮球场之一",content:"学校老篮球场",point:"104.199614|30.657671",isOpen:0,icon:{w:23,h:25,l:0,t:21,x:9,lb:12}}
+                                     ,{title:"成大第十教学楼",content:"信息科学与技术学院<br/>电子信息工程学院",point:"104.200638|30.662269",isOpen:0,icon:{w:23,h:25,l:0,t:21,x:9,lb:12}}
+                                     ,{title:"学校中心，点击查看详情",content:"目前这里是学校的中心位置<br/>附近有一食堂、师生活动中心、中国银行、工商银行、打印部等等",point:"104.197314|30.657624",isOpen:0,icon:{w:23,h:25,l:0,t:21,x:9,lb:12}}
+                                     ];
+                                //创建marker
+                                function addMarker(){
+                                    for(var i=0;i<markerArr.length;i++){
+                                        var json = markerArr[i];
+                                        var p0 = json.point.split("|")[0];
+                                        var p1 = json.point.split("|")[1];
+                                        var point = new BMap.Point(p0,p1);
+                                        var iconImg = createIcon(json.icon);
+                                        var marker = new BMap.Marker(point,{icon:iconImg});
+                                        var iw = createInfoWindow(i);
+                                        var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+                                        marker.setLabel(label);
+                                        map.addOverlay(marker);
+                                        label.setStyle({
+                                                    borderColor:"#808080",
+                                                    color:"#333",
+                                                    cursor:"pointer"
+                                        });
+                                        
+                                        (function(){
+                                            var index = i;
+                                            var _iw = createInfoWindow(i);
+                                            var _marker = marker;
+                                            _marker.addEventListener("click",function(){
+                                                this.openInfoWindow(_iw);
+                                            });
+                                            _iw.addEventListener("open",function(){
+                                                _marker.getLabel().hide();
+                                            })
+                                            _iw.addEventListener("close",function(){
+                                                _marker.getLabel().show();
+                                            })
+                                            label.addEventListener("click",function(){
+                                                _marker.openInfoWindow(_iw);
+                                            })
+                                            if(!!json.isOpen){
+                                                label.hide();
+                                                _marker.openInfoWindow(_iw);
+                                            }
+                                        })()
+                                    }
+                                }
+                                //创建InfoWindow
+                                function createInfoWindow(i){
+                                    var json = markerArr[i];
+                                    var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+                                    return iw;
+                                }
+                                //创建一个Icon
+                                function createIcon(json){
+                                    var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+                                    return icon;
+                                }
+                            //标注线数组
+                                var plPoints = [{style:"solid",weight:3,color:"#f00",opacity:0.6,points:["104.191704|30.655737","104.191623|30.654743","104.192405|30.654743","104.192495|30.654743","104.192737|30.65451","104.192845|30.65444","104.192908|30.654355","104.19289|30.654285","104.192962|30.654153","104.193142|30.654044","104.193357|30.653997","104.193519|30.653997","104.193752|30.654036","104.193797|30.65406","104.194202|30.653959","104.19466|30.653951","104.195055|30.653943","104.195289|30.65399","104.195549|30.654083","104.19581|30.65413","104.196331|30.654168","104.19669|30.65423","104.19687|30.654293"]}
+                                     ,{style:"solid",weight:3,color:"#f00",opacity:0.6,points:["104.196861|30.654285","104.197498|30.654533","104.197957|30.654844","104.198289|30.655147","104.198639|30.655605","104.198747|30.655869","104.198909|30.656281","104.198963|30.656693","104.198981|30.657143","104.198945|30.657718","104.198918|30.658184","104.198954|30.658339","104.198999|30.658455"]}
+                                     ,{style:"solid",weight:3,color:"#f00",opacity:0.6,points:["104.199008|30.658448","104.199151|30.65865","104.199358|30.658821","104.199457|30.658991","104.199466|30.659154","104.199106|30.659597","104.199008|30.659714","104.198963|30.66004","104.198954|30.660389","104.198927|30.660653","104.198954|30.661073","104.199008|30.661213","104.199223|30.661329","104.199762|30.661562","104.200005|30.661694","104.200014|30.66209","104.199618|30.662067","104.198846|30.662067","104.198316|30.662082","104.197965|30.662082","104.197939|30.661671","104.197948|30.661065","104.197965|30.661065"]}
+                                     ,{style:"solid",weight:3,color:"#00f",opacity:0.6,points:["104.197957|30.661065","104.197957|30.660684","104.198927|30.660599"]}
+                                     ,{style:"solid",weight:3,color:"#0f0",opacity:0.6,points:["104.198913|30.656265","104.199425|30.656211","104.19982|30.656234"]}
+                                     ,{style:"solid",weight:3,color:"#0f0",opacity:0.6,points:["104.198985|30.65712","104.197727|30.657174","104.197341|30.657586"]}
+                                     ,{style:"solid",weight:3,color:"#0f0",opacity:0.6,points:["104.200009|30.662082","104.200638|30.66209","104.200647|30.662261"]}
+                                     ];
+                                //向地图中添加线函数
+                                function addPolyline(){
+                                    for(var i=0;i<plPoints.length;i++){
+                                        var json = plPoints[i];
+                                        var points = [];
+                                        for(var j=0;j<json.points.length;j++){
+                                            var p1 = json.points[j].split("|")[0];
+                                            var p2 = json.points[j].split("|")[1];
+                                            points.push(new BMap.Point(p1,p2));
+                                        }
+                                        var line = new BMap.Polyline(points,{strokeStyle:json.style,strokeWeight:json.weight,strokeColor:json.color,strokeOpacity:json.opacity});
+                                        map.addOverlay(line);
+                                    }
+                                }
+                            //文字标注数组
+                                var lbPoints = [{point:"104.197368|30.662486",content:"五食堂美食城"}
+                                     ,{point:"104.198554|30.662432",content:"学校新篮球场"}
+                                     ,{point:"104.200494|30.660529",content:"学校新区第三期<br/>正在建设施工"}
+                                     ,{point:"104.202147|30.662409",content:"学校新区第三期<br/>第15、16栋宿舍、第六食堂、学生活动中心等<br/>学生活动中心建筑面积8900m2，学生食堂建筑面积8200m2，<br/>学生宿舍建筑面积36000m2"}
+                                     ,{point:"104.200512|30.661034",content:"成都大学新图书馆、行政楼"}
+                                     ,{point:"104.200512|30.65997",content:"成都大学教学楼、音乐厅、档案馆（具体位置以官方发布为准）"}
+                                     ,{point:"104.197718|30.66164",content:"【校内公交终点】"}
+                                     ,{point:"104.191826|30.65559",content:"红色和蓝色为公交路线；<br/>绿色为步行路线。"}
+                                     ];
+                                //向地图中添加文字标注函数
+                                function addRemark(){
+                                    for(var i=0;i<lbPoints.length;i++){
+                                        var json = lbPoints[i];
+                                        var p1 = json.point.split("|")[0];
+                                        var p2 = json.point.split("|")[1];
+                                        var label = new BMap.Label("<div style='padding:2px;'>"+json.content+"</div>",{point:new BMap.Point(p1,p2),offset:new BMap.Size(3,-6)});
+                                        map.addOverlay(label);
+                                        label.setStyle({borderColor:"#999"});
+                                    }
+                                }
+                                
+                                initMap();//创建和初始化地图
+                            </script>
+
+
+                       
+                        </div>
+                        <!--第一个地图结束-->
+                        <div class="col col-md-12 mapfoot"><h4>温馨提示：刷新可以回到初始位置&nbsp;&nbsp;<a href="school-map-bus.html">点击刷新</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看更多请点击左边导航栏 &nbsp;&nbsp;<a href="../../html/works.html">My Works</a></h4></div>	
+                      		            
+					</article> 
+
+ 
+ 			                          
+				</div>
+			</div>
+            
+			<footer class="row credit">
+				<div class="col col-md-12">
+					<div id="templatemo_footer" class="footer">
+						Copyright © 2014 <a href="#">XiongJun</a> &nbsp;| &nbsp;&nbsp;Add： <a href="#" title="add" target="_blank">四川省成都市龙泉驿区成都大学</a> &nbsp;| &nbsp;&nbsp;Blog： <a href="http://weibo.com/xiongjun0812" target="_blank" title="blog">http://weibo.com/xiongjun0812</a>
+					</div>
+				</div>
+			</footer>
+		</div>		
+	</div>
+</body>
+<!--<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js'></script>-->
+<script type='text/javascript' src='../js/logging.js'></script>
+<!--回到顶部下二个-->
+<script  type="text/javascript" src="../../js/jquery.min.js"></script>
+<script  type="text/javascript" src="../../js/gotop.js"></script>
+</html>

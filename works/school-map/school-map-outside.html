@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+	<title>校内校外：银行和火车代售点</title>
+	<meta name="keywords" content="botany, services, responsive, bootstrap, free template, templatemo" />
+	<meta name="description" content="Botany Template, Services, free template, responsive bootstrap" />
+	<link href="../../css/font-awesome.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../css/templatemo_style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/basic.css" rel="stylesheet" type="text/css">
+
+	<!-- HTML 5 shim for IE backwards compatibility -->
+		<!-- [if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+		</script>
+		<![endif]-->
+	<!-- 
+	Credits
+	Equal Height Columns - http://www.hongkiat.com/blog/css-equal-height/
+	Font Awesome by Dave Gandy - http://fontawesome.io
+-->
+      <!-- Favicon -->
+  <link rel="shortcut icon" href="../../images/favicon/favicon.png">
+  
+</head>
+<body class="templatemo_flower_3">
+	<div id="main_container">
+		<div class="container" id="services">
+			<div class="row col-wrap">			 
+				<div id="left_container" class="col col-md-3 col-sm-12">
+					<div class="templatemo_logo">
+						<a  href="../index.html"><img src="../../images/templatemo_logo.png" alt="Botany Theme"></a>
+					</div>
+					<nav id="main_nav">
+						<ul class="nav">
+							<li><a href="../../index.html">Home</a></li>
+							<li><a href="../../html/about.html">About</a></li>
+							<li><a href="../../html/photo.html">Photo</a></li>
+                            <li class="active"><a href="../../html/works.html">My Works</a></li>
+							<li><a href="../../html/university.html">University</a></li>
+                            <li><a href="../../html/hometown.html">HomeTown</a></li>
+							<li><a href="../../html/contact.html">Contact</a></li>
+						</ul>
+					</nav> <!-- nav -->	
+
+					<form  action="#" method="get" class="navbar-form" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search" id="keyword" name="keyword">
+						</div>
+						<button type="submit" class="btn btn-primary" name="Search">Go</button>
+					</form>
+					<div>
+						<a  href="#"><img src="../../images/facebook.png" alt="Like us on Facebook"></a>
+						<a href="#"><img src="../../images/twitter.png" alt="Follow us on Twitter"></a>
+						<a href="#"><img src="../../images/rss.png" alt="RSS feeds"></a>
+					</div>
+                    <div class="sentence">
+                    <p>创作——源于生活</p>
+                    </div>
+				</div>			  	
+				<div id="right_container" class="col col-md-9 col-sm-12">
+					<div class="row">
+                    	<div class="col col-md-12">
+                        	<h2>成都大学动态校园地图 <a href="../../index.html" target="_blank"><span  style="font-size:70%;">（成都大学新生指南群 286016921  群主倾情奉献！）</span></a></h2>
+                        </div>
+                    </div>
+					<article class="row">
+                    	<div class="col col-md-12 school-map">
+                        <h4>请选择类别：</h4>
+                        <h4>银行：<a href="school-map-outside.html">中国银行、工商银行、交通银行、建设银行、邮政储蓄银行</a></h4>
+                        <h4>火车票代售点：<a href="school-map-train.html">成都铁路局十陵代售点</a></h4>
+                        </div><br>
+                        <h3 class="col col-md-12 school-map">银行</h3>
+						<div class="col col-md-12"><h4>中国银行、工商银行、交通银行、建设银行、邮政储蓄银行</h4></div>
+                        <!--第一个地图开始-->				
+						<div class="mapthree">
+
+                                <!--引用百度地图API-->
+                                <style type="text/css">
+                                    html,body{margin:0;padding:0;}
+                                    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+                                    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+                                </style>
+                                <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+                                
+                                
+                                
+                                  <!--百度地图容器-->
+                                  <div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+                                
+                                <script type="text/javascript">
+                                    //创建和初始化地图函数：
+                                    function initMap(){
+                                        createMap();//创建地图
+                                        setMapEvent();//设置地图事件
+                                        addMapControl();//向地图添加控件
+                                        addMarker();//向地图中添加marker
+                                        addPolyline();//向地图中添加线
+                                        addRemark();//向地图中添加文字标注
+                                    }
+                                    
+                                    //创建地图函数：
+                                    function createMap(){
+                                        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+                                        var point = new BMap.Point(104.194368,30.655427);//定义一个中心点坐标
+                                        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+                                        window.map = map;//将map变量存储在全局
+                                    }
+                                    
+                                    //地图事件设置函数：
+                                    function setMapEvent(){
+                                        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+                                        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+                                        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+                                        map.enableKeyboard();//启用键盘上下左右键移动地图
+                                    }
+                                    
+                                    //地图控件添加函数：
+                                    function addMapControl(){
+                                        //向地图中添加缩放控件
+                                    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+                                    map.addControl(ctrl_nav);
+                                        //向地图中添加缩略图控件
+                                    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+                                    map.addControl(ctrl_ove);
+                                        //向地图中添加比例尺控件
+                                    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+                                    map.addControl(ctrl_sca);
+                                    }
+                                    
+                                    //标注点数组
+                                    var markerArr = [{title:"中国银行BOC",content:"一台取款机",point:"104.194067|30.654696",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ,{title:"中国工商银行ICBC",content:"一台取款机",point:"104.193914|30.654557",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ,{title:"中国银行BOC",content:"2台取款机；一台存取款机；<br/>一台自助服务终端",point:"104.197705|30.65705",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ,{title:"中国工商银行ICBC",content:"一台取款机；两台存取款机",point:"104.198316|30.657306",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ,{title:"工商银行",content:"一台取款机",point:"104.197328|30.65698",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ,{title:"中国银行BOC",content:"一台存取款机<br/>八教楼下",point:"104.198244|30.658805",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ,{title:"交通银行",content:"一台取款机",point:"104.197292|30.65865",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ,{title:"中国邮政储蓄银行",content:"有银行柜台<br/>有自助银行（两台取款机，一台存取款机）",point:"104.192046|30.658005",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ,{title:"中国建设银行",content:"银行柜台",point:"104.186|30.658626",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ,{title:"中国银行十陵支行",content:"中国银行龙泉驿十陵支行",point:"104.183593|30.656195",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}
+                                         ];
+                                    //创建marker
+                                    function addMarker(){
+                                        for(var i=0;i<markerArr.length;i++){
+                                            var json = markerArr[i];
+                                            var p0 = json.point.split("|")[0];
+                                            var p1 = json.point.split("|")[1];
+                                            var point = new BMap.Point(p0,p1);
+                                            var iconImg = createIcon(json.icon);
+                                            var marker = new BMap.Marker(point,{icon:iconImg});
+                                            var iw = createInfoWindow(i);
+                                            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+                                            marker.setLabel(label);
+                                            map.addOverlay(marker);
+                                            label.setStyle({
+                                                        borderColor:"#808080",
+                                                        color:"#333",
+                                                        cursor:"pointer"
+                                            });
+                                            
+                                            (function(){
+                                                var index = i;
+                                                var _iw = createInfoWindow(i);
+                                                var _marker = marker;
+                                                _marker.addEventListener("click",function(){
+                                                    this.openInfoWindow(_iw);
+                                                });
+                                                _iw.addEventListener("open",function(){
+                                                    _marker.getLabel().hide();
+                                                })
+                                                _iw.addEventListener("close",function(){
+                                                    _marker.getLabel().show();
+                                                })
+                                                label.addEventListener("click",function(){
+                                                    _marker.openInfoWindow(_iw);
+                                                })
+                                                if(!!json.isOpen){
+                                                    label.hide();
+                                                    _marker.openInfoWindow(_iw);
+                                                }
+                                            })()
+                                        }
+                                    }
+                                    //创建InfoWindow
+                                    function createInfoWindow(i){
+                                        var json = markerArr[i];
+                                        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+                                        return iw;
+                                    }
+                                    //创建一个Icon
+                                    function createIcon(json){
+                                        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+                                        return icon;
+                                    }
+                                //标注线数组
+                                    var plPoints = [{style:"solid",weight:2,color:"#00f",opacity:0.6,points:["104.193492|30.653764","104.193438|30.653997","104.193654|30.653997","104.193797|30.654075","104.193887|30.654145","104.19395|30.654262","104.193932|30.654417","104.194705|30.654968","104.197256|30.65705","104.1974|30.657174","104.198981|30.65712","104.198972|30.657298"]}
+                                         ,{style:"solid",weight:2,color:"#00f",opacity:0.6,points:["104.198972|30.657322","104.198918|30.658238","104.198999|30.658502","104.198244|30.65865","104.198253|30.658821","104.198253|30.658642","104.197965|30.658727","104.19775|30.658595","104.197301|30.658665"]}
+                                         ,{style:"solid",weight:2,color:"#0f0",opacity:0.6,points:["104.191686|30.655667","104.192549|30.655753","104.192603|30.655877","104.193393|30.655869","104.193483|30.656219","104.19369|30.656599","104.194022|30.656957","104.194399|30.65719","104.194866|30.657399","104.19563|30.657492","104.196061|30.65743","104.196411|30.657283","104.196789|30.657174","104.197058|30.657135","104.197391|30.657174"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.19201|30.657935","104.192001|30.658463","104.190024|30.658479","104.190024|30.65823","104.190024|30.658479","104.186|30.658518","104.186|30.658619","104.186|30.658611"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.191695|30.655667","104.191713|30.655815","104.192037|30.656467","104.19201|30.657943","104.19201|30.658013","104.192073|30.658021"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.183772|30.655302","104.18379|30.654673","104.183943|30.654751","104.183988|30.65472","104.184841|30.655318","104.185398|30.65566","104.186072|30.656025","104.186674|30.656258","104.187797|30.656452","104.188237|30.656522","104.188902|30.656498","104.189611|30.656475"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.189602|30.656475","104.190743|30.656304","104.191677|30.656025","104.191713|30.655768","104.191695|30.655613"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.191713|30.655691","104.191623|30.654696","104.192441|30.654728","104.192513|30.654735","104.192854|30.654386","104.192908|30.654324","104.192962|30.654199","104.193115|30.654044","104.193276|30.653997","104.193447|30.653997","104.193456|30.653997"]}
+                                         ,{style:"solid",weight:2,color:"#00f",opacity:0.6,points:["104.197391|30.657159","104.197435|30.657694","104.197247|30.657702","104.197283|30.658285","104.197552|30.658285","104.197741|30.658603"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.186009|30.65851","104.183997|30.658518","104.183997|30.658657","104.183997|30.65851","104.182739|30.658518","104.182748|30.658634","104.182739|30.65851","104.1837|30.65851","104.183763|30.656188","104.183593|30.656188","104.183763|30.656195","104.183781|30.65524"]}
+                                         ];
+                                    //向地图中添加线函数
+                                    function addPolyline(){
+                                        for(var i=0;i<plPoints.length;i++){
+                                            var json = plPoints[i];
+                                            var points = [];
+                                            for(var j=0;j<json.points.length;j++){
+                                                var p1 = json.points[j].split("|")[0];
+                                                var p2 = json.points[j].split("|")[1];
+                                                points.push(new BMap.Point(p1,p2));
+                                            }
+                                            var line = new BMap.Polyline(points,{strokeStyle:json.style,strokeWeight:json.weight,strokeColor:json.color,strokeOpacity:json.opacity});
+                                            map.addOverlay(line);
+                                        }
+                                    }
+                                //文字标注数组
+                                    var lbPoints = [{point:"104.191884|30.655295",content:"成都大学游泳池"}
+                                         ,{point:"104.191498|30.655729",content:"后校门"}
+                                         ,{point:"104.192351|30.654153",content:"提示：<br/>蓝色去校内银行<br/>红色去校外银行"}
+                                         ,{point:"104.191525|30.657873",content:"交通银行"}
+                                         ,{point:"104.194884|30.657089",content:"寻知桥"}
+                                         ,{point:"104.194139|30.65597",content:"寻梦桥"}
+                                         ,{point:"104.193294|30.653757",content:"成都大学前校门"}
+                                         ];
+                                    //向地图中添加文字标注函数
+                                    function addRemark(){
+                                        for(var i=0;i<lbPoints.length;i++){
+                                            var json = lbPoints[i];
+                                            var p1 = json.point.split("|")[0];
+                                            var p2 = json.point.split("|")[1];
+                                            var label = new BMap.Label("<div style='padding:2px;'>"+json.content+"</div>",{point:new BMap.Point(p1,p2),offset:new BMap.Size(3,-6)});
+                                            map.addOverlay(label);
+                                            label.setStyle({borderColor:"#999"});
+                                        }
+                                    }
+                                    
+                                    initMap();//创建和初始化地图
+                                </script>
+
+
+
+                       
+                        </div>
+                        <!--第一个地图结束-->
+                      	<div class="col col-md-12 mapfoot"><h4>温馨提示：刷新可以回到初始位置&nbsp;&nbsp;<a href="school-map-teaching-building.html">点击刷新</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看更多请点击左边导航栏 &nbsp;&nbsp;<a href="../../html/works.html">My Works</a></h4></div>	            
+					</article> 
+
+ 
+ 			                          
+				</div>
+			</div>
+            
+			<footer class="row credit">
+				<div class="col col-md-12">
+					<div id="templatemo_footer" class="footer">
+						Copyright © 2014 <a href="#">XiongJun</a> &nbsp;| &nbsp;&nbsp;Add： <a href="#" title="add" target="_blank">四川省成都市龙泉驿区成都大学</a> &nbsp;| &nbsp;&nbsp;Blog： <a href="http://weibo.com/xiongjun0812" target="_blank" title="blog">http://weibo.com/xiongjun0812</a>
+					</div>
+				</div>
+			</footer>
+		</div>		
+	</div>
+</body>
+<!--<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js'></script>-->
+<script type='text/javascript' src='../js/logging.js'></script>
+<!--回到顶部下二个-->
+<script  type="text/javascript" src="../../js/jquery.min.js"></script>
+<script  type="text/javascript" src="../../js/gotop.js"></script>
+</html>

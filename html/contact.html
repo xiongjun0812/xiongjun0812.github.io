@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+	<title>xiongjun-contact</title>
+	<meta name="keywords" content="botany, contact, maps, responsive, bootstrap, free template, fluid layout, templatemo, html css" />
+	<meta name="description" content="Botany Template, Contact, Maps, responsive page with bootstrap" />
+	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../css/templatemo_style.css" rel="stylesheet" type="text/css">
+    <link href="../css/basic.css" rel="stylesheet" type="text/css">
+
+	<!-- HTML 5 shim for IE backwards compatibility -->
+		<!-- [if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+		</script>
+		<![endif]-->
+	<!-- 
+	Credits
+	Equal Height Columns http://www.hongkiat.com/blog/css-equal-height/ -->
+     
+     <!-- Favicon -->
+  <link rel="shortcut icon" href="../images/favicon/favicon.png">
+  
+</head>
+<body class="templatemo_garden_bg">
+	<div id="main_container">
+		<div class="container" id="contact">
+			<div class="row col-wrap">			 
+				<div id="left_container" class="col col-md-3 col-sm-12">
+					<div class="templatemo_logo">
+						<a  href="../index.html"><img src="../images/templatemo_logo.png" alt="Botany Theme"></a>
+					</div>
+					<nav id="main_nav">
+						<ul class="nav">
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="photo.html">Photo</a></li>
+                            <li><a href="works.html">My Works</a></li>
+							<li><a href="university.html">University</a></li>
+                            <li><a href="hometown.html">HomeTown</a></li>
+							<li class="active"><a href="contact.html">Contact</a></li>
+						</ul>
+					</nav> <!-- nav -->	
+					<form  action="#" method="get" class="navbar-form" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search" id="keyword" name="keyword">
+						</div>
+						<button type="submit" class="btn btn-primary" name="Search">Go</button>
+					</form>
+					<div>
+						<a  href="#"><img src="../images/facebook.png" alt="Like us on Facebook"></a>
+						<a href="http://weibo.com/xiongjun0812" target="_blank"><img src="../images/twitter.png" alt="Follow us on Twitter"></a>
+						<a href="#"><img src="../images/rss.png" alt="RSS feeds"></a>
+					</div>
+                    <div class="sentence">
+                    <p>每一天，美一天</p>
+                    </div>
+				</div>			  	
+				<div id="right_container" class="col col-md-9 col-sm-12">
+					<div class="row"><div class="col col-md-12 mianbao"><h3>联系我 Contact Us</h3></div></div>
+					<div class="row">
+						<div class="col-md-12">
+							<p>谢谢光临，留下点什么吧！</p>
+						</div>
+					</div>
+					<form role="form" action="#" method="post">
+						<div class="row">
+							<div class="col-md-5">
+								<div class="form-group left-inner-addon">
+									<span class="glyphicon glyphicon-user"></span>
+									<input name="fullname" type="text" class="form-control" id="input_name" placeholder="姓名">
+							  </div>
+								<div class="form-group left-inner-addon">
+									<span class="glyphicon glyphicon-envelope"></span>
+									<input name="email" type="email" class="form-control" id="input_email" placeholder="您的邮箱">
+								</div>
+								<div class="form-group left-inner-addon">
+									<span class="glyphicon glyphicon-earphone"></span>
+									<input name="phone" type="tel" class="form-control" id="input_tel" placeholder="联系方式">
+								</div>
+							</div> 
+							<div class="col-md-7">
+								<div class="form-group left-inner-addon">
+									<span class="glyphicon glyphicon-comment"></span>
+									<textarea name="message" rows="6" class="form-control" id="input_message" placeholder="内容..."></textarea><br>
+									<button type="submit" class="btn btn-primary sendtwo" value=test onclick=test()>发 送</button>
+									<button type="reset" class="btn btn-default sendthree float_r">取 消</button>
+								</div>
+							</div>
+						</div> <!-- row -->
+					</form>
+  
+                 
+                    <!--<input type=submit value=test onclick=test()>-->
+                       <script type="text/javascript">
+                               function test(){
+                        alert('留言功能还未对外开放，下次再来吧！我一定转告xiongjun,叫这个懒货尽快开通权限。其实我就是xiongjun，哈哈！');
+                         }
+                            </script>
+
+	
+    				<div class="row">
+                        <div class="col col-md-12">
+                        	<h3>我的位置 Our Location</h3>
+                        </div> 
+                         <!--引用百度地图API-->
+                        <div class="map">                                                
+                           
+                            <style type="text/css">
+                                html,body{margin:0;padding:0;}
+                                .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+                                .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+                            </style>
+                            <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+                            
+                            
+                              <!--百度地图容器-->
+                              <div style="width:697px;height:500px;border:#ccc solid 1px;" id="dituContent"></div>
+                            
+                            <script type="text/javascript">
+                                //创建和初始化地图函数：
+                                function initMap(){
+                                    createMap();//创建地图
+                                    setMapEvent();//设置地图事件
+                                    addMapControl();//向地图添加控件
+                                }
+                                
+                                //创建地图函数：
+                                function createMap(){
+                                    var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+                                    var point = new BMap.Point(104.195311,30.65545);//定义一个中心点坐标
+                                    map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+                                    window.map = map;//将map变量存储在全局
+                                }
+                                
+                                //地图事件设置函数：
+                                function setMapEvent(){
+                                    map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+                                    map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+                                    map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+                                    map.enableKeyboard();//启用键盘上下左右键移动地图
+                                }
+                                
+                                //地图控件添加函数：
+                                function addMapControl(){
+                                    //向地图中添加缩放控件
+                                var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+                                map.addControl(ctrl_nav);
+                                    //向地图中添加缩略图控件
+                                var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+                                map.addControl(ctrl_ove);
+                                    //向地图中添加比例尺控件
+                                var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+                                map.addControl(ctrl_sca);
+                                }
+                                
+                                
+                                initMap();//创建和初始化地图
+                            </script>
+                            </div>
+                 		 <!--引用百度地图API结束-->
+                                                 
+                    </div>	 
+                                             
+				</div>
+			</div>
+            
+			<footer class="row credit">
+				<div class="col col-md-12">
+					<div id="templatemo_footer" class="footer">
+						Copyright © 2014 <a href="#">XiongJun</a> &nbsp;| &nbsp;&nbsp;Add： <a href="#" title="add" target="_blank">四川省成都市龙泉驿区成都大学</a> &nbsp;| &nbsp;&nbsp;Blog： <a href="http://weibo.com/xiongjun0812" target="_blank" title="blog">http://weibo.com/xiongjun0812</a>
+					</div>
+				</div>
+			</footer>
+            
+		</div>		
+	</div>
+</body>
+
+<!--<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js'></script>-->
+<script type='text/javascript' src='js/logging.js'></script>
+<!--回到顶部下二个-->
+<script  type="text/javascript" src="../js/jquery.min.js"></script>
+<script  type="text/javascript" src="../js/gotop.js"></script>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+	<title>校内重要或容易被忽视的地方</title>
+	<meta name="keywords" content="botany, services, responsive, bootstrap, free template, templatemo" />
+	<meta name="description" content="Botany Template, Services, free template, responsive bootstrap" />
+	<link href="../../css/font-awesome.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../css/templatemo_style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/basic.css" rel="stylesheet" type="text/css">
+
+	<!-- HTML 5 shim for IE backwards compatibility -->
+		<!-- [if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+		</script>
+		<![endif]-->
+	<!-- 
+	Credits
+	Equal Height Columns - http://www.hongkiat.com/blog/css-equal-height/
+	Font Awesome by Dave Gandy - http://fontawesome.io
+-->
+      <!-- Favicon -->
+  <link rel="shortcut icon" href="../../images/favicon/favicon.png">
+  
+</head>
+<body class="templatemo_flower_3">
+	<div id="main_container">
+		<div class="container" id="services">
+			<div class="row col-wrap">			 
+				<div id="left_container" class="col col-md-3 col-sm-12">
+					<div class="templatemo_logo">
+						<a  href="../index.html"><img src="../../images/templatemo_logo.png" alt="Botany Theme"></a>
+					</div>
+					<nav id="main_nav">
+						<ul class="nav">
+							<li><a href="../../index.html">Home</a></li>
+							<li><a href="../../html/about.html">About</a></li>
+							<li><a href="../../html/photo.html">Photo</a></li>
+                            <li class="active"><a href="../../html/works.html">My Works</a></li>
+							<li><a href="../../html/university.html">University</a></li>
+                            <li><a href="../../html/hometown.html">HomeTown</a></li>
+							<li><a href="../../html/contact.html">Contact</a></li>
+						</ul>
+					</nav> <!-- nav -->	
+
+					<form  action="#" method="get" class="navbar-form" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search" id="keyword" name="keyword">
+						</div>
+						<button type="submit" class="btn btn-primary" name="Search">Go</button>
+					</form>
+					<div>
+						<a  href="#"><img src="../../images/facebook.png" alt="Like us on Facebook"></a>
+						<a href="#"><img src="../../images/twitter.png" alt="Follow us on Twitter"></a>
+						<a href="#"><img src="../../images/rss.png" alt="RSS feeds"></a>
+					</div>
+                    <div class="sentence">
+                    <p>创作——源于生活</p>
+                    </div>
+				</div>			  	
+				<div id="right_container" class="col col-md-9 col-sm-12">
+					<div class="row">
+                    	<div class="col col-md-12">
+                        	<h2>成都大学动态校园地图 <a href="../../index.html" target="_blank"><span  style="font-size:70%;">（成都大学新生指南群 286016921  群主倾情奉献！）</span></a></h2>
+                        </div>
+                    </div>
+					<article class="row">
+                    	<div class="col col-md-12 school-map">
+                        <h4>请选择类别：</h4>
+                        <h4>公共场所：<a href="school-map-place.html">保卫处、交流中心、三食堂、收发室、档案馆、七教、中行、师活中心、校史馆、整合书库</a></h4>
+                        <h4>教学楼、食堂：<a href="school-map-teaching-building.html">第1-10教学楼、行政楼、实验楼、第1-6食堂</a></h4>
+                        <h4>学生宿舍：<a href="school-map-dormitory.html">第1—16宿舍</a></h4>
+                        </div><br>
+                        <h3 class="col col-md-12 school-map">公共场所</h3>
+						<div class="col col-md-12"><h4>保卫处（印刷厂）、教师公寓、校医院、学术交流中心（招待所）、第三食堂、收发室、档案馆、第七教学楼、中国银行（自助银行）、师生活动中心、实验楼、校史馆、整合书库</h4></div>
+                        <!--第一个地图开始-->				
+						<div class="mapthree">
+
+                                <!--引用百度地图API-->
+                                <style type="text/css">
+                                    html,body{margin:0;padding:0;}
+                                    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+                                    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+                                </style>
+                                <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+                                
+                                
+                                
+                                  <!--百度地图容器-->
+                                  <div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+                                
+                                <script type="text/javascript">
+                                    //创建和初始化地图函数：
+                                    function initMap(){
+                                        createMap();//创建地图
+                                        setMapEvent();//设置地图事件
+                                        addMapControl();//向地图添加控件
+                                        addMarker();//向地图中添加marker
+                                        addPolyline();//向地图中添加线
+                                        addRemark();//向地图中添加文字标注
+                                    }
+                                    
+                                    //创建地图函数：
+                                    function createMap(){
+                                        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+                                        var point = new BMap.Point(104.195715,30.655722);//定义一个中心点坐标
+                                        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+                                        window.map = map;//将map变量存储在全局
+                                    }
+                                    
+                                    //地图事件设置函数：
+                                    function setMapEvent(){
+                                        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+                                        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+                                        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+                                        map.enableKeyboard();//启用键盘上下左右键移动地图
+                                    }
+                                    
+                                    //地图控件添加函数：
+                                    function addMapControl(){
+                                        //向地图中添加缩放控件
+                                    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+                                    map.addControl(ctrl_nav);
+                                        //向地图中添加缩略图控件
+                                    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+                                    map.addControl(ctrl_ove);
+                                        }
+                                    
+                                    //标注点数组
+                                    var markerArr = [{title:"保卫处、印刷厂【点击】",content:"保卫处电话：028-84616337<br/>印刷厂在保卫处旁边",point:"104.1898|30.655427",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ,{title:"学术交流中心【点击我】",content:"招待所和学术交流中心在一栋楼。后面就是第三食堂。",point:"104.192378|30.6543",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ,{title:"第三食堂【点击我】",content:"成大后校门就正对第三食堂。",point:"104.192369|30.654627",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ,{title:"学校收发室【点击我】",content:"位置在成大前校门，当你面向校外时在你左侧。",point:"104.193591|30.653982",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ,{title:"成大档案馆【点击我】",content:"具体位置：图书馆五楼<br/>电话：028-84616595",point:"104.195513|30.656366",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ,{title:"第七教学楼【点击我】",content:"第七教学楼隐藏在第五教和第六教后面。",point:"104.197965|30.655768",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ,{title:"中国银行【点击我】",content:"具体位置：第六教学楼下<br/>一食堂对面",point:"104.197516|30.65712",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ,{title:"师生活动中心【点击我】",content:"一食堂二楼右侧<br/>使用需填写学生活动中心使用申请单（含责任书）",point:"104.197858|30.657624",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ,{title:"校史馆【点击我】",content:"具体位置：第九教学楼一楼",point:"104.198442|30.661112",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ,{title:"整合书库【点击我】",content:"整合书库具体位置：十教10105、10107、10109<br/>信息科学与技术学院资料室：10507（左）<br/>开发时间：<br/>周一、周三10:30-17:00<br/>周二10:30-13:00<br/>周四、周五10:30-13:00",point:"104.20075|30.662579",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+                                         ];
+                                    //创建marker
+                                    function addMarker(){
+                                        for(var i=0;i<markerArr.length;i++){
+                                            var json = markerArr[i];
+                                            var p0 = json.point.split("|")[0];
+                                            var p1 = json.point.split("|")[1];
+                                            var point = new BMap.Point(p0,p1);
+                                            var iconImg = createIcon(json.icon);
+                                            var marker = new BMap.Marker(point,{icon:iconImg});
+                                            var iw = createInfoWindow(i);
+                                            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+                                            marker.setLabel(label);
+                                            map.addOverlay(marker);
+                                            label.setStyle({
+                                                        borderColor:"#808080",
+                                                        color:"#333",
+                                                        cursor:"pointer"
+                                            });
+                                            
+                                            (function(){
+                                                var index = i;
+                                                var _iw = createInfoWindow(i);
+                                                var _marker = marker;
+                                                _marker.addEventListener("click",function(){
+                                                    this.openInfoWindow(_iw);
+                                                });
+                                                _iw.addEventListener("open",function(){
+                                                    _marker.getLabel().hide();
+                                                })
+                                                _iw.addEventListener("close",function(){
+                                                    _marker.getLabel().show();
+                                                })
+                                                label.addEventListener("click",function(){
+                                                    _marker.openInfoWindow(_iw);
+                                                })
+                                                if(!!json.isOpen){
+                                                    label.hide();
+                                                    _marker.openInfoWindow(_iw);
+                                                }
+                                            })()
+                                        }
+                                    }
+                                    //创建InfoWindow
+                                    function createInfoWindow(i){
+                                        var json = markerArr[i];
+                                        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+                                        return iw;
+                                    }
+                                    //创建一个Icon
+                                    function createIcon(json){
+                                        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+                                        return icon;
+                                    }
+                                //标注线数组
+                                    var plPoints = [{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.191614|30.65472","104.191435|30.654766","104.191318|30.654852","104.190995|30.655038","104.19068|30.655139","104.190393|30.655232","104.190033|30.65531","104.1898|30.655318","104.1898|30.655427"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.190851|30.655038","104.190779|30.655108","104.190887|30.655131"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.198936|30.656677","104.198478|30.656693","104.19828|30.656491","104.19784|30.656133","104.197723|30.656032","104.197957|30.655815"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.19165|30.654712","104.192396|30.654735","104.19254|30.654743","104.192603|30.654619","104.192773|30.654463","104.192881|30.654409","104.192899|30.6543","104.192935|30.654207","104.19298|30.654137","104.193178|30.654029","104.193465|30.653974","104.193627|30.65399","104.193833|30.654013","104.194112|30.653974","104.194327|30.653959","104.194633|30.653951","104.194812|30.653959","104.195028|30.653951","104.195244|30.653997","104.195441|30.654036"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.198127|30.656452","104.198091|30.656343","104.198217|30.656351"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.198981|30.657112","104.199906|30.657081","104.20111|30.657058","104.201092|30.656273","104.201316|30.656265","104.201307|30.65611"]}
+                                         ,{style:"solid",weight:2,color:"#f00",opacity:0.6,points:["104.200499|30.657127","104.200624|30.657065","104.200508|30.657034"]}
+                                         ,{style:"solid",weight:2,color:"#00f",opacity:0.6,points:["104.198972|30.657112","104.197732|30.657205","104.19713|30.657127","104.196816|30.657166","104.196358|30.657275","104.196124|30.657399","104.195756|30.657485","104.195378|30.657477","104.194642|30.657322","104.194229|30.657089","104.193761|30.656708","104.193618|30.656498"]}
+                                         ,{style:"solid",weight:2,color:"#00f",opacity:0.6,points:["104.193609|30.656498","104.193465|30.656172","104.193411|30.655838","104.192719|30.655877","104.19236|30.655893","104.192333|30.655683","104.191686|30.655652","104.191686|30.655761"]}
+                                         ,{style:"solid",weight:2,color:"#00f",opacity:0.6,points:["104.198981|30.657104","104.198954|30.657601","104.198945|30.658215","104.198972|30.658409","104.199115|30.658634","104.199385|30.658852","104.199457|30.659007","104.199457|30.659147","104.199277|30.659411","104.199106|30.659613","104.19899|30.659737","104.198963|30.660048","104.198936|30.66049","104.198945|30.661104","104.19925|30.661337"]}
+                                         ];
+                                    //向地图中添加线函数
+                                    function addPolyline(){
+                                        for(var i=0;i<plPoints.length;i++){
+                                            var json = plPoints[i];
+                                            var points = [];
+                                            for(var j=0;j<json.points.length;j++){
+                                                var p1 = json.points[j].split("|")[0];
+                                                var p2 = json.points[j].split("|")[1];
+                                                points.push(new BMap.Point(p1,p2));
+                                            }
+                                            var line = new BMap.Polyline(points,{strokeStyle:json.style,strokeWeight:json.weight,strokeColor:json.color,strokeOpacity:json.opacity});
+                                            map.addOverlay(line);
+                                        }
+                                    }
+                                //文字标注数组
+                                    var lbPoints = [{point:"104.193312|30.653904",content:"前校门"}
+                                         ,{point:"104.200615|30.661997",content:"成都大学<br/>信息科学与技术学院"}
+                                         ,{point:"104.19051|30.656094",content:"校医院"}
+                                         ,{point:"104.191579|30.655799",content:"后校门"}
+                                         ,{point:"104.186539|30.653625",content:"成都大学教师公寓"}
+                                         ,{point:"104.192737|30.65792",content:"成大第二食堂"}
+                                         ,{point:"104.200939|30.66056",content:"成都大学新区第三期"}
+                                         ,{point:"104.201181|30.656063",content:"成<br/>大<br/>实<br/>验<br/>楼"}
+                                         ];
+                                    //向地图中添加文字标注函数
+                                    function addRemark(){
+                                        for(var i=0;i<lbPoints.length;i++){
+                                            var json = lbPoints[i];
+                                            var p1 = json.point.split("|")[0];
+                                            var p2 = json.point.split("|")[1];
+                                            var label = new BMap.Label("<div style='padding:2px;'>"+json.content+"</div>",{point:new BMap.Point(p1,p2),offset:new BMap.Size(3,-6)});
+                                            map.addOverlay(label);
+                                            label.setStyle({borderColor:"#999"});
+                                        }
+                                    }
+                                    
+                                    initMap();//创建和初始化地图
+                                </script>
+
+
+
+                       
+                        </div>
+                        <!--第一个地图结束-->
+                        <div class="col col-md-12 mapfoot"><h4>温馨提示：刷新可以回到初始位置&nbsp;&nbsp;<a href="school-map-place.html">点击刷新</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看更多请点击左边导航栏 &nbsp;&nbsp;<a href="../../html/works.html">My Works</a></h4></div>	
+                      		            
+					</article> 
+
+ 
+ 			                          
+				</div>
+			</div>
+            
+			<footer class="row credit">
+				<div class="col col-md-12">
+					<div id="templatemo_footer" class="footer">
+						Copyright © 2014 <a href="#">XiongJun</a> &nbsp;| &nbsp;&nbsp;Add： <a href="#" title="add" target="_blank">四川省成都市龙泉驿区成都大学</a> &nbsp;| &nbsp;&nbsp;Blog： <a href="http://weibo.com/xiongjun0812" target="_blank" title="blog">http://weibo.com/xiongjun0812</a>
+					</div>
+				</div>
+			</footer>
+		</div>		
+	</div>
+</body>
+<!--<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js'></script>-->
+<script type='text/javascript' src='../js/logging.js'></script>
+<!--回到顶部下二个-->
+<script  type="text/javascript" src="../../js/jquery.min.js"></script>
+<script  type="text/javascript" src="../../js/gotop.js"></script>
+</html>
